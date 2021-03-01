@@ -16,5 +16,13 @@ public class DropdownPage {
     public void SelectDropdownOption(String option) {
         WebElement dropdownElement = driver.findElement(dropdown);
         new Select(dropdownElement).selectByVisibleText(option);
+
+
     }
+    public String getSelectedOption() {
+        WebElement dropdownElement = driver.findElement(dropdown);
+        String selectedOption = new Select(dropdownElement).getFirstSelectedOption().getText();
+        return selectedOption;
+    }
+
 }
